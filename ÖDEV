@@ -1,0 +1,59 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+public class Ornek {
+ 
+ public static void main(String[] args) {
+ 
+ int genislik = 0;
+ int yukseklik = 0;
+ 
+ try
+ {
+ //Console ekranından yükseklik değerini okuma
+ BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+ 
+ System.out.println("Lütfen Dikdörtgenin Yüksekliğini Girin");
+ yukseklik = Integer.parseInt(br.readLine());
+ 
+ //Console ekranından genişlik değerini okuma
+ System.out.println("Lütfen Dikdörtgenin Genişliğini Girin");
+ genislik = Integer.parseInt(br.readLine());
+ 
+ 
+ }
+ //geçersiz bir değer girilirse
+ catch(NumberFormatException ne)
+ {
+ System.out.println("Geçersiz Karakter" + ne);
+ System.exit(0);
+ }
+ catch(IOException ioe)
+ {
+ System.out.println("IO Hatası :" + ioe);
+ System.exit(0);
+ }
+ 
+ /*
+ * Alan
+ * genislik * yukseklik
+ */
+ 
+ int alan = yukseklik * genislik;
+ 
+ System.out.println("Dikdörtgenin alanı: " + alan);
+ 
+ 
+ /*
+ * Çevre
+ * 2*(genislik + yukseklik)
+ */
+ 
+ int cevre = 2*(genislik + yukseklik);
+ 
+ System.out.println("Dikdörtgenin çevresi: " + cevre);
+ 
+ }
+ 
+}
